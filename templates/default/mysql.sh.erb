@@ -10,7 +10,7 @@ find "<%= node[:backup_scripts][:target_directory] %>/mysql" -type f -mtime +<%=
 echo ""
 
 # Get a list of databases available on the server.
-LIST=<%= node[:backup_scripts][:databases].join(" ") %>
+LIST=(<%= node[:backup_scripts][:databases].join(" ") %>)
 # Backup each database to its own file.
 echo "DUMPING DATABASES:"
 echo "------------------"
